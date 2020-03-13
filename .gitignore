@@ -1,0 +1,7 @@
+# Godot-specific ignores
+
+# Folders
+.import/
+
+# File types
+*.json
