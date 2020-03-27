@@ -45,3 +45,7 @@ func _on_SaveFileDialog_file_selected(path):
 	f.open(path, 2)
 	f.store_string($TextEdit.text)
 	f.close()
+
+
+func _on_Button_About_Ok_pressed():
+	$AboutDialog.hide()

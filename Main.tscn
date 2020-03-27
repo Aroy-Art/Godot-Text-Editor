@@ -37,12 +37,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -358.0
-margin_top = -172.5
-margin_right = 358.0
-margin_bottom = 172.5
+margin_left = -384.0
+margin_top = -212.0
+margin_right = 384.0
+margin_bottom = 212.0
 window_title = "Open a File"
 mode = 0
+current_file = "default_env.tres"
+current_path = "res://default_env.tres"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -90,34 +92,110 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -184.0
-margin_top = -108.0
-margin_right = 184.0
-margin_bottom = 108.0
+margin_left = -200.0
+margin_top = -116.0
+margin_right = 200.0
+margin_bottom = 124.0
 window_title = "About"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="AboutDialog"]
+[node name="ColorRect" type="ColorRect" parent="AboutDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -192.0
+margin_top = -16.0
+margin_right = 192.0
+margin_bottom = 40.0
+color = Color( 0.12549, 0.145098, 0.192157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="AboutDialog/ColorRect"]
 anchor_left = 0.022
 anchor_top = 0.5
 anchor_right = 0.978
 anchor_bottom = 0.5
-margin_left = -0.0960007
-margin_top = 12.0
-margin_right = 0.0959778
-margin_bottom = 51.0
+margin_left = -0.448
+margin_top = -16.0
+margin_right = 0.447998
+margin_bottom = 23.0
 text = "Hello and welcome to may little text editor made with Godot"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect2" type="ColorRect" parent="AboutDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -192.0
+margin_top = 48.0
+margin_right = 192.0
+margin_bottom = 80.0
+color = Color( 0.12549, 0.145098, 0.192157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="AboutDialog/ColorRect2"]
+anchor_left = 0.022
+anchor_top = 0.5
+anchor_right = 0.978
+anchor_bottom = 0.5
+margin_left = -0.448
+margin_top = -16.0
+margin_right = 0.447998
+margin_bottom = 6.0
+text = "© 2020 Levi Mattiasson"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="AboutDialog/ColorRect2"]
+anchor_left = 0.022
+anchor_top = 0.5
+anchor_right = 0.978
+anchor_bottom = 0.5
+margin_left = -0.448
+margin_top = -16.0
+margin_right = 0.447998
+margin_bottom = 6.0
+text = "License: MIT"
+align = 2
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="AboutDialog"]
-margin_left = 136.0
-margin_right = 232.0
+margin_left = 152.0
+margin_right = 248.0
 margin_bottom = 96.0
 texture = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="AboutDialog"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -24.0
+margin_top = -32.0
+margin_right = 24.0
+margin_bottom = -10.0
+text = "Ok"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="file_selected" from="OpenFileDialog" to="." method="_on_OpenFileDialog_file_selected"]
 [connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
+[connection signal="pressed" from="AboutDialog/Button" to="." method="_on_Button_About_Ok_pressed"]
